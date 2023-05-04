@@ -1,0 +1,9 @@
+#include "conversion.h"
+
+float cmToInches(float cm) {
+    return cm / CM_PER_INCH;
+}
+
+float inchesToCm(float inches) {
+    return inches * CM_PER_INCH;
+}

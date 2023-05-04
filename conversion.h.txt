@@ -1,0 +1,9 @@
+#ifndef CONVERSION_H
+#define CONVERSION_H
+
+#define CM_PER_INCH 2.54
+
+float cmToInches(float cm);
+float inchesToCm(float inches);
+
+#endif

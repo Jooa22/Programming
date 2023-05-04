@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "conversion.h"
+
+int main() {
+    char input[256];
+    float inches, cm;
+
+    printf("Enter inches: ");
+    if (fgets(input, sizeof(input), stdin) == NULL) {
+        printf("Error: unable to read input\n");
+        return 1;
+    }
+    if (sscanf(input, "%f", &inches) != 1) {
+        printf("Error: invalid input format\n");
+        return 1;
+    }
+
+    cm = inchesToCm(inches);
+    printf("%.2f inches = %.2f cm\n", inches, cm);
+
+    return 0;
+}

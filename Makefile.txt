@@ -1,0 +1,17 @@
+CC=gcc
+CFLAGS=-Wall -Wextra -std=c99
+LDFLAGS=
+
+all: converter
+
+converter: main.o conversion.o
+	$(CC) $(LDFLAGS) -o $@ $^
+
+main.o: main.c conversion.h
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+conversion.o: conversion.c conversion.h
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+clean:
+	rm -f converter *.o

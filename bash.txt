@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# prompt for commit message
+echo "Enter commit message:"
+read message
+
+# stage all changes
+git add -A
+
+# record deletions
+deleted=$(git ls-files --deleted)
+if [ -n "$deleted" ]; then
+    git add -u
+fi
+
+# commit changes
+git commit -m "$message"
+
+# push changes to remote
+git push origin master
